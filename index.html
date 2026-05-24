@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clínica Noble Corazón – RR. HH.</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- ══════════════ SIDEBAR ══════════════ -->
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <div class="brand-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/>
+        <path d="M12 8v4M10 12h4"/>
+      </svg>
+    </div>
+    <div>
+      <div class="brand-name">Noble Corazón</div>
+      <div class="brand-sub">Sistema RR. HH.</div>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="nav-item active" data-page="dashboard" onclick="navigate('dashboard')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Dashboard
+    </a>
+    <a class="nav-item" data-page="empleados" onclick="navigate('empleados')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Empleados
+    </a>
+    <a class="nav-item" data-page="nomina" onclick="navigate('nomina')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+      Nómina
+    </a>
+    <a class="nav-item" data-page="turnos" onclick="navigate('turnos')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Turnos
+    </a>
+    <a class="nav-item" data-page="capacitaciones" onclick="navigate('capacitaciones')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      Capacitaciones
+    </a>
+    <a class="nav-item" data-page="evaluaciones" onclick="navigate('evaluaciones')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Evaluaciones
+    </a>
+  </nav>
+
+  <div class="sidebar-user">
+    <div class="avatar">AS</div>
+    <div>
+      <div class="user-name">Ana Suárez</div>
+      <div class="user-role">Coordinadora RR. HH.</div>
+    </div>
+  </div>
+</aside>
+
+<!-- ══════════════ MAIN ══════════════ -->
+<main class="main">
+
+  <!-- ── TOPBAR ── -->
+  <header class="topbar">
+    <div class="topbar-title" id="topbar-title">Dashboard</div>
+    <div class="topbar-right">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" placeholder="Buscar..." id="search-input"/>
+      </div>
+      <button class="btn-icon" title="Notificaciones">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        <span class="notif-badge">3</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════ -->
+  <!-- PAGE: DASHBOARD               -->
+  <!-- ══════════════════════════════ -->
+  <section class="page active" id="page-dashboard">
+    <div class="page-header">
+      <h1>Resumen General</h1>
+      <p>Clínica Noble Corazón · Yopal, Casanare · 2026</p>
+    </div>
+
+    <!-- KPI cards -->
+    <div class="kpi-grid">
+      <div class="kpi-card" style="--accent:#0ea5e9">
+        <div class="kpi-icon" style="background:rgba(14,165,233,.12)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        </div>
+        <div class="kpi-value" data-target="178">0</div>
+        <div class="kpi-label">Empleados Activos</div>
+        <div class="kpi-delta up">+4 este mes</div>
+      </div>
+      <div class="kpi-card" style="--accent:#10b981">
+        <div class="kpi-icon" style="background:rgba(16,185,129,.12)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <div class="kpi-value" id="kpi-nomina">$0</div>
+        <div class="kpi-label">Nómina Total Mes</div>
+        <div class="kpi-delta up">+2.3%</div>
+      </div>
+      <div class="kpi-card" style="--accent:#f59e0b">
+        <div class="kpi-icon" style="background:rgba(245,158,11,.12)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <div class="kpi-value" data-target="3">0</div>
+        <div class="kpi-label">Capacitaciones Activas</div>
+        <div class="kpi-delta neutral">Este semestre</div>
+      </div>
+      <div class="kpi-card" style="--accent:#ef4444">
+        <div class="kpi-icon" style="background:rgba(239,68,68,.12)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="kpi-value" data-target="7">0</div>
+        <div class="kpi-label">Sin Evaluación Semestral</div>
+        <div class="kpi-delta down">Requieren atención</div>
+      </div>
+    </div>
+
+    <!-- Charts row -->
+    <div class="charts-row">
+      <!-- Departamentos -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Personal por Departamento</h3>
+        </div>
+        <div class="dept-bars">
+          <div class="dept-row"><span>Medicina General</span><div class="bar-track"><div class="bar-fill" style="--w:45%;--c:#0ea5e9"></div></div><b>45%</b></div>
+          <div class="dept-row"><span>Enfermería</span><div class="bar-track"><div class="bar-fill" style="--w:35%;--c:#10b981"></div></div><b>35%</b></div>
+          <div class="dept-row"><span>Urgencias</span><div class="bar-track"><div class="bar-fill" style="--w:12%;--c:#f59e0b"></div></div><b>12%</b></div>
+          <div class="dept-row"><span>Administrativo</span><div class="bar-track"><div class="bar-fill" style="--w:8%;--c:#8b5cf6"></div></div><b>8%</b></div>
+        </div>
+      </div>
+
+      <!-- Nómina mensual -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Nómina Últimos 6 Meses</h3>
+        </div>
+        <div class="mini-chart" id="nomina-chart">
+          <canvas id="barChart" width="360" height="160"></canvas>
+        </div>
+      </div>
+
+      <!-- Turnos hoy -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Turnos Hoy</h3>
+          <span class="badge-today" id="date-today"></span>
+        </div>
+        <div class="turnos-list">
+          <div class="turno-row"><div class="dot" style="background:#0ea5e9"></div><span>Mañana (06–14h)</span><b>24 empleados</b></div>
+          <div class="turno-row"><div class="dot" style="background:#10b981"></div><span>Tarde (14–22h)</span><b>21 empleados</b></div>
+          <div class="turno-row"><div class="dot" style="background:#6366f1"></div><span>Noche (22–06h)</span><b>18 empleados</b></div>
+          <div class="turno-row warn"><div class="dot" style="background:#ef4444"></div><span>Sin asignar</span><b>3 empleados</b></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent table -->
+    <div class="card mt">
+      <div class="card-header">
+        <h3>Últimas Novedades de RR. HH.</h3>
+        <button class="btn-link" onclick="navigate('empleados')">Ver todos →</button>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>Empleado</th><th>Tipo</th><th>Descripción</th><th>Fecha</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td><div class="cell-user"><div class="av sm" style="background:#0ea5e9">CR</div>Carlos Reyes</div></td><td>Contrato</td><td>Aumento salarial aprobado</td><td>15/05/2026</td><td><span class="badge green">Activo</span></td></tr>
+          <tr><td><div class="cell-user"><div class="av sm" style="background:#10b981">LT</div>Luisa Torres</div></td><td>Capacitación</td><td>RCP Avanzado – Completada</td><td>12/02/2026</td><td><span class="badge green">Completado</span></td></tr>
+          <tr><td><div class="cell-user"><div class="av sm" style="background:#f59e0b">PV</div>Pedro Vargas</div></td><td>Evaluación</td><td>Semestre 2025-1 pendiente</td><td>01/05/2026</td><td><span class="badge yellow">Pendiente</span></td></tr>
+          <tr><td><div class="cell-user"><div class="av sm" style="background:#8b5cf6">AS</div>Ana Suárez</div></td><td>Nómina</td><td>Liquidación mayo procesada</td><td>30/05/2026</td><td><span class="badge green">Pagado</span></td></tr>
+          <tr><td><div class="cell-user"><div class="av sm" style="background:#ef4444">SC</div>Sandra Cifuentes</div></td><td>Contrato</td><td>Contrato terminado – PSS</td><td>30/06/2024</td><td><span class="badge red">Inactivo</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ -->
+  <!-- PAGE: EMPLEADOS               -->
+  <!-- ══════════════════════════════ -->
+  <section class="page" id="page-empleados">
+    <div class="page-header row-between">
+      <div>
+        <h1>Gestión de Empleados</h1>
+        <p>Registro y administración del talento humano</p>
+      </div>
+      <button class="btn-primary" onclick="openModal()">+ Nuevo Empleado</button>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters-bar">
+      <select id="filter-dept" onchange="renderTable()">
+        <option value="">Todos los departamentos</option>
+        <option>Medicina General</option>
+        <option>Enfermería</option>
+        <option>Urgencias</option>
+        <option>Recursos Humanos</option>
+        <option>Administración</option>
+        <option>Laboratorio Clínico</option>
+      </select>
+      <select id="filter-estado" onchange="renderTable()">
+        <option value="">Todos los estados</option>
+        <option value="Activo">Activo</option>
+        <option value="Inactivo">Inactivo</option>
+      </select>
+      <input type="text" id="filter-search" placeholder="Buscar por nombre o documento…" oninput="renderTable()"/>
+    </div>
+
+    <!-- Table -->
+    <div class="card">
+      <table class="data-table" id="emp-table">
+        <thead>
+          <tr>
+            <th>Empleado</th>
+            <th>Documento</th>
+            <th>Cargo</th>
+            <th>Departamento</th>
+            <th>Contrato</th>
+            <th>Salario</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="emp-tbody"></tbody>
+      </table>
+      <div class="table-footer">
+        <span id="emp-count">Mostrando 0 empleados</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pages placeholder (nomina, turnos, etc.) -->
+  <section class="page" id="page-nomina"><div class="coming-soon"><div class="cs-icon">💳</div><h2>Nómina</h2><p>Módulo en desarrollo</p></div></section>
+  <section class="page" id="page-turnos"><div class="coming-soon"><div class="cs-icon">🕐</div><h2>Turnos</h2><p>Módulo en desarrollo</p></div></section>
+  <section class="page" id="page-capacitaciones"><div class="coming-soon"><div class="cs-icon">📚</div><h2>Capacitaciones</h2><p>Módulo en desarrollo</p></div></section>
+  <section class="page" id="page-evaluaciones"><div class="coming-soon"><div class="cs-icon">📊</div><h2>Evaluaciones</h2><p>Módulo en desarrollo</p></div></section>
+
+</main>
+
+<!-- ══════════════ MODAL: Nuevo / Editar Empleado ══════════════ -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modal-title">Nuevo Empleado</h2>
+      <button class="btn-icon" onclick="closeModal()">✕</button>
+    </div>
+    <form id="emp-form" onsubmit="saveEmployee(event)">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Primer Nombre *</label>
+          <input type="text" id="f-primer_nombre" required placeholder="Carlos"/>
+        </div>
+        <div class="form-group">
+          <label>Segundo Nombre</label>
+          <input type="text" id="f-segundo_nombre" placeholder="Andrés"/>
+        </div>
+        <div class="form-group">
+          <label>Primer Apellido *</label>
+          <input type="text" id="f-primer_apellido" required placeholder="Reyes"/>
+        </div>
+        <div class="form-group">
+          <label>Segundo Apellido</label>
+          <input type="text" id="f-segundo_apellido" placeholder="Mora"/>
+        </div>
+        <div class="form-group">
+          <label>Tipo Documento *</label>
+          <select id="f-tipo_doc" required>
+            <option value="">Seleccione…</option>
+            <option>Cédula de Ciudadanía</option>
+            <option>Cédula de Extranjería</option>
+            <option>Pasaporte</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Número Documento *</label>
+          <input type="text" id="f-num_doc" required placeholder="1098234567"/>
+        </div>
+        <div class="form-group">
+          <label>Fecha de Nacimiento *</label>
+          <input type="date" id="f-fecha_nac" required/>
+        </div>
+        <div class="form-group">
+          <label>Correo Institucional *</label>
+          <input type="email" id="f-correo" required placeholder="nombre@noblecorazon.com"/>
+        </div>
+        <div class="form-group">
+          <label>Teléfono</label>
+          <input type="tel" id="f-telefono" placeholder="3101234567"/>
+        </div>
+        <div class="form-group">
+          <label>Cargo *</label>
+          <select id="f-cargo" required>
+            <option value="">Seleccione…</option>
+            <option>Médico General</option>
+            <option>Médico Especialista</option>
+            <option>Enfermero Jefe</option>
+            <option>Auxiliar de Enfermería</option>
+            <option>Médico Urgenciólogo</option>
+            <option>Coordinador RR. HH.</option>
+            <option>Auxiliar Administrativo</option>
+            <option>Bacteriólogo</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Departamento *</label>
+          <select id="f-departamento" required>
+            <option value="">Seleccione…</option>
+            <option>Medicina General</option>
+            <option>Enfermería</option>
+            <option>Urgencias</option>
+            <option>Recursos Humanos</option>
+            <option>Administración</option>
+            <option>Laboratorio Clínico</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tipo Contrato *</label>
+          <select id="f-tipo_contrato" required>
+            <option value="">Seleccione…</option>
+            <option>Término Indefinido</option>
+            <option>Término Fijo</option>
+            <option>Prestación de Servicios</option>
+            <option>Obra o Labor</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Salario Base (COP) *</label>
+          <input type="number" id="f-salario" required placeholder="3800000" min="1300000"/>
+        </div>
+        <div class="form-group">
+          <label>Estado *</label>
+          <select id="f-estado" required>
+            <option value="Activo">Activo</option>
+            <option value="Inactivo">Inactivo</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closeModal()">Cancelar</button>
+        <button type="submit" class="btn-primary">Guardar Empleado</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
